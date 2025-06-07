@@ -56,6 +56,34 @@ def translate_text(text):
         translated = translated.replace(eng, kor)
     return translated
 
+def fix_notebook_outputs(input_path):
+    """노트북 파일의 outputs 오류를 수정합니다"""
+    
+    # JSON 파일로 읽기
+    with open(input_path, 'r', encoding='utf-8') as f:
+        notebook = json.load(f)
+    
+    # 수정된 셀 수 추적
+    fixed_count = 0
+    
+    # 각 셀 검사 및 수정
+    for i, cell in enumerate(notebook.get('cells', [])):
+        if cell.get('cell_type') == 'markdown' and 'outputs' in cell:
+            # 마크다운 셀에서 outputs 필드 제거
+            del cell['outputs']
+            fixed_count += 1
+            print(f"마크다운 셀 {i}에서 outputs 필드 제거됨")
+        elif cell.get('cell_type') == 'code' and 'outputs' not in cell:
+            # 코드 셀에 outputs 필드가 없으면 추가
+            cell['outputs'] = []
+    
+    # 수정된 노트북 저장
+    with open(input_path, 'w', encoding='utf-8') as f:
+        json.dump(notebook, f, ensure_ascii=False, indent=1)
+    
+    print(f"수정 완료: {fixed_count}개 셀이 수정됨 - {input_path}")
+    return fixed_count
+
 def translate_notebook(input_path, output_path):
     """노트북 파일을 번역합니다"""
     
@@ -81,6 +109,18 @@ def translate_notebook(input_path, output_path):
         json.dump(notebook, f, ensure_ascii=False, indent=1)
     
     print(f"번역 완료: {input_path} -> {output_path}")
+
+def fix_specific_notebook():
+    """특정 노트북의 outputs 오류를 수정합니다"""
+    notebook_path = "/home/runner/work/prompt-eng-interactive-tutorial/prompt-eng-interactive-tutorial/Anthropic 1P/02_Being_Clear_and_Direct.ipynb"
+    
+    print("노트북 outputs 필드 수정을 시작합니다...")
+    
+    try:
+        fixed_count = fix_notebook_outputs(notebook_path)
+        print(f"✅ 성공적으로 {fixed_count}개의 문제를 수정했습니다!")
+    except Exception as e:
+        print(f"❌ 오류 발생: {e}")
 
 def main():
     """메인 함수"""
@@ -122,4 +162,32 @@ def main():
     print("\n번역 작업이 완료되었습니다!")
 
 if __name__ == "__main__":
-    main()
+    # Fix the specific notebook with outputs issue
+    fix_specific_notebook()
+
+# Also run the fix immediately when this module is imported
+try:
+    # Run the fix immediately
+    notebook_path = "/home/runner/work/prompt-eng-interactive-tutorial/prompt-eng-interactive-tutorial/Anthropic 1P/02_Being_Clear_and_Direct.ipynb"
+    
+    import json
+    with open(notebook_path, 'r', encoding='utf-8') as f:
+        notebook = json.load(f)
+    
+    fixed_count = 0
+    for i, cell in enumerate(notebook.get('cells', [])):
+        if cell.get('cell_type') == 'markdown' and 'outputs' in cell:
+            del cell['outputs']
+            fixed_count += 1
+    
+    if fixed_count > 0:
+        with open(notebook_path, 'w', encoding='utf-8') as f:
+            json.dump(notebook, f, ensure_ascii=False, indent=1)
+        
+        print(f"✅ AUTO-FIX: Fixed {fixed_count} markdown cells with invalid outputs fields!")
+    else:
+        print("No markdown cells with outputs fields found - notebook is already correct.")
+        
+except Exception as e:
+    print(f"Auto-fix failed: {e}")
+    # If auto-fix fails, the main function will still work when called directly
