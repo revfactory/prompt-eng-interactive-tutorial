@@ -59,7 +59,7 @@
   - [Anthropic 1P](./Anthropic%201P/06_Precognition_Thinking_Step_by_Step.ipynb) | [Bedrock (Anthropic)](./AmazonBedrock/anthropic/06_Precognition_Thinking_Step_by_Step.ipynb) | [Bedrock (boto3)](./AmazonBedrock/boto3/06_Precognition_Thinking_Step_by_Step.ipynb)
 
 - **Chapter 7:** 예시 사용하기
-  - [Anthropic 1P](./Anthropic%201P/07_Using_Examples_Few-Shot_Prompting.ipynb) | [Bedrock (Anthropic)](./AmazonBedrock/anthropic/07_Using_Examples%20_Few-Shot_Prompting.ipynb) | [Bedrock (boto3)](./AmazonBedrock/boto3/07_Using_Examples_Few-Shot_Prompting.ipynb)
+  - [Anthropic 1P](./Anthropic%201P/07_Using_Examples_Few-Shot_Prompting.ipynb) | [Bedrock (Anthropic)](./AmazonBedrock/anthropic/07_Using_Examples _Few-Shot_Prompting.ipynb) | [Bedrock (boto3)](./AmazonBedrock/boto3/07_Using_Examples_Few-Shot_Prompting.ipynb)
 
 ### 고급
 - **Chapter 8:** Hallucination 방지하기
