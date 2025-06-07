@@ -1,23 +1,23 @@
-exercise_1_1_hint = """The grading function in this exercise is looking for an answer that contains the exact Arabic numerals "1", "2", and "3".
-You can often get Claude to do what you want simply by asking."""
+exercise_1_1_hint = """이 연습문제의 채점 함수는 정확한 아라비아 숫자 "1", "2", "3"이 포함된 답변을 찾고 있습니다.
+간단히 요청하는 것만으로도 Claude가 원하는 것을 하도록 만들 수 있습니다."""
 
-exercise_1_2_hint = """The grading function in this exercise is looking for answers that contain "soo" or "giggles".
-There are many ways to solve this, just by asking!"""
+exercise_1_2_hint = """이 연습문제의 채점 함수는 "soo" 또는 "giggles"가 포함된 답변을 찾고 있습니다.
+단순히 요청하는 것만으로도 여러 가지 방법으로 해결할 수 있습니다!"""
 
-exercise_2_1_hint ="""The grading function in this exercise is looking for any answer that includes the word "hola".
-Ask Claude to reply in Spanish like you would when speaking with a human. It's that simple!"""
+exercise_2_1_hint ="""이 연습문제의 채점 함수는 "hola"라는 단어가 포함된 답변을 찾고 있습니다.
+사람과 대화할 때처럼 Claude에게 스페인어로 답변하도록 요청하세요. 정말 간단합니다!"""
 
-exercise_2_2_hint = """The grading function in this exercise is looking for EXACTLY "Michael Jordan".
-How would you ask another human to do this? Reply with no other words? Reply with only the name and nothing else? There are several ways to approach this answer."""
+exercise_2_2_hint = """이 연습문제의 채점 함수는 정확히 "Michael Jordan"만을 찾고 있습니다.
+다른 사람에게 이것을 요청한다면 어떻게 하시겠습니까? 다른 단어 없이 답변하라고? 이름만 답하고 다른 것은 없이? 이 답변에 접근하는 여러 가지 방법이 있습니다."""
 
-exercise_2_3_hint = """The grading function in this cell is looking for a response that is equal to or greater than 800 words.
-Because LLMs aren't great at counting words yet, you may have to overshoot your target."""
+exercise_2_3_hint = """이 셀의 채점 함수는 800단어 이상의 응답을 찾고 있습니다.
+LLM은 아직 단어 수를 정확히 세는 데 능숙하지 않으므로 목표치를 초과해야 할 수도 있습니다."""
 
-exercise_3_1_hint = """The grading function in this exercise is looking for an answer that includes the words "incorrect" or "not correct".
-Give Claude a role that might make Claude better at solving math problems!"""
+exercise_3_1_hint = """이 연습문제의 채점 함수는 "incorrect" 또는 "not correct"라는 단어가 포함된 답변을 찾고 있습니다.
+Claude가 수학 문제를 더 잘 해결할 수 있도록 하는 역할을 부여하세요!"""
 
-exercise_4_1_hint = """The grading function in this exercise is looking for a solution that includes the words "haiku" and "pig".
-Don't forget to include the exact phrase "{TOPIC}" wherever you want the topic to be substituted in. Changing the "TOPIC" variable value should make Claude write a haiku about a different topic."""
+exercise_4_1_hint = """이 연습문제의 채점 함수는 "haiku"와 "pig"라는 단어가 포함된 해결책을 찾고 있습니다.
+주제를 대체하고 싶은 곳에 정확한 구문 "{TOPIC}"를 포함하는 것을 잊지 마세요. "TOPIC" 변수 값을 변경하면 Claude가 다른 주제에 대한 하이쿠를 작성하게 됩니다."""
 
 exercise_4_2_hint = """The grading function in this exercise is looking for a response that includes the word "brown".
 If you surround "{QUESTION}" in XML tags, how does that change Claude's response?"""
