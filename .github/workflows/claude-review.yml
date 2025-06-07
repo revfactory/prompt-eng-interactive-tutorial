@@ -26,6 +26,7 @@ jobs:
             - Potential bugs or issues
             - Suggestions for improvements
             - Overall architecture and design decisions
+            - Response in Korean
 
             Be constructive and specific in your feedback. Give inline comments where applicable.
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
